@@ -1,11 +1,9 @@
-.monthwrapper {
-  display: "flex";
-  flex-direction: "column";
-  gap: 16px;
-}
+.monthWrapper {
+  display: flex;
+  flex-direction: column;
 
-.weekwrapper {
-  display: "flex";
-  flex-direction: "row";
-  justify-content: "space-between";
+  .weekWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }

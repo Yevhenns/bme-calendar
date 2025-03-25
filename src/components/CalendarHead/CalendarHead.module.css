@@ -1,9 +1,10 @@
 .headWrapper {
   display: flex;
   margin-bottom: 16px;
-}
+  justify-content: space-between;
 
-.text {
-  width: 36px;
-  text-align: "center";
+  .text {
+    width: 24px;
+    font-size: 12px;
+  }
 }

@@ -1,7 +1,6 @@
 .container {
-  padding: 4px;
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   border: none;
   border-radius: 4px;
@@ -10,13 +9,25 @@
   align-items: "center";
   cursor: pointer;
   transition: all 250ms linear;
+  font-size: 12px;
+  padding: 0;
 
   &:hover {
+    background-color: #e2deff;
+  }
+
+  &.dayToday {
     background-color: #9b8ff3;
     color: #f8fbff;
   }
-}
 
-.notInCurrentMonth {
-  color: #d0d5d8;
+  &.selectedDay {
+    background-color: #e2deff;
+    border: 2px solid #9b8ff3;
+    color: #062341;
+  }
+
+  .notInCurrentMonth {
+    color: #d0d5d8;
+  }
 }

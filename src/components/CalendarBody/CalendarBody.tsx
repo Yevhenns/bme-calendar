@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
 import css from "./CalendarBody.module.css";
 
@@ -6,7 +7,10 @@ interface CalendarBodyBody {
 }
 
 export function CalendarBody({ finalDaysArray }: CalendarBodyBody) {
+  const [selectedDay, setSelectedDay] = useState("");
+
   const setUpSelectedDay = (dayItem: CalendarDay) => {
+    setSelectedDay(dayItem.id);
     console.log(dayItem);
   };
 
@@ -22,6 +26,7 @@ export function CalendarBody({ finalDaysArray }: CalendarBodyBody) {
                     key={index}
                     dayItem={dayItem}
                     setUpSelectedDay={setUpSelectedDay}
+                    selectedDay={selectedDay}
                   />
                 );
               })}
