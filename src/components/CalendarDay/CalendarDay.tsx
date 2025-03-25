@@ -6,22 +6,12 @@ import css from "./CalendarDay.module.css";
 dayjs.extend(weekOfYear);
 
 interface DayWrapperProps {
-  index: number;
   dayItem: CalendarDay;
   setUpSelectedDay: (dayItem: CalendarDay) => void;
 }
 
-export function CalendarDay({
-  index,
-  dayItem,
-  setUpSelectedDay,
-}: DayWrapperProps) {
-  const { id, type } = dayItem;
-
-  const SATURDAY = 6;
-  const SUNDAY = 0;
-  const isWeekend = index === SATURDAY || index === SUNDAY;
-  const isDayToday = dayjs().format("YYYY-MM-DD") === id;
+export function CalendarDay({ dayItem, setUpSelectedDay }: DayWrapperProps) {
+  const { type } = dayItem;
 
   const onPress = () => {
     setUpSelectedDay(dayItem);

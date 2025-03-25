@@ -21,7 +21,6 @@ export function CalendarBody({ finalDaysArray }: CalendarBodyBody) {
                   <CalendarDay
                     key={index}
                     dayItem={dayItem}
-                    index={index}
                     setUpSelectedDay={setUpSelectedDay}
                   />
                 );
