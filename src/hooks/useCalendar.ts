@@ -53,16 +53,26 @@ export function useCalendar() {
 
   useEffect(() => {
     const prevMonthDayArray = [];
-    for (
-      let i = prevMonthDaysCount;
-      i > prevMonthDaysCount - currentMonthFirstDayIndex + 1;
-      i--
-    ) {
-      prevMonthDayArray.push({
-        id: dayjs(`${year}-${prevMonthNumber}-${i}`).format("YYYY-MM-DD"),
-        day: i,
-        type: "prev",
-      });
+    if (currentMonthFirstDayIndex !== 0) {
+      for (
+        let i = prevMonthDaysCount;
+        i > prevMonthDaysCount - currentMonthFirstDayIndex + 1;
+        i--
+      ) {
+        prevMonthDayArray.push({
+          id: dayjs(`${year}-${prevMonthNumber}-${i}`).format("YYYY-MM-DD"),
+          day: i,
+          type: "prev",
+        });
+      }
+    } else {
+      for (let i = prevMonthDaysCount; i > prevMonthDaysCount - 6; i--) {
+        prevMonthDayArray.push({
+          id: dayjs(`${year}-${prevMonthNumber}-${i}`).format("YYYY-MM-DD"),
+          day: i,
+          type: "prev",
+        });
+      }
     }
 
     const currentMonthDaysArray = [];
