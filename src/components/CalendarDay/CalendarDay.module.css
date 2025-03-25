@@ -1,0 +1,26 @@
+.container {
+  padding: 4px;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  cursor: pointer;
+  transition: all 250ms linear;
+
+  &:hover {
+    background-color: #9b8ff3;
+    color: #f8fbff;
+  }
+}
+
+.dayToday {
+  background-color: #dcdcdc;
+}
+
+.weekend {
+  background-color: #90ee90;
+}

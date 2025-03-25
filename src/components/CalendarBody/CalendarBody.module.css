@@ -1,0 +1,11 @@
+.monthwrapper {
+  display: "flex";
+  flex-direction: "column";
+  gap: 16px;
+}
+
+.weekwrapper {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "space-between";
+}

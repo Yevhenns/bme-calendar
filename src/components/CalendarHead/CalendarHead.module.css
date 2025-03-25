@@ -1,0 +1,9 @@
+.headWrapper {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.text {
+  width: 36px;
+  text-align: "center";
+}
