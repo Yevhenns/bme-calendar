@@ -55,7 +55,7 @@ export function useCalendar() {
     const prevMonthDayArray = [];
     for (
       let i = prevMonthDaysCount;
-      i > prevMonthDaysCount - currentMonthFirstDayIndex;
+      i > prevMonthDaysCount - currentMonthFirstDayIndex + 1;
       i--
     ) {
       prevMonthDayArray.push({

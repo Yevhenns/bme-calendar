@@ -16,7 +16,7 @@ export function CalendarDay({
   dayItem,
   setUpSelectedDay,
 }: DayWrapperProps) {
-  const { id } = dayItem;
+  const { id, type } = dayItem;
 
   const SATURDAY = 6;
   const SUNDAY = 0;
@@ -29,7 +29,9 @@ export function CalendarDay({
 
   return (
     <button onClick={onPress} className={css.container}>
-      <p>{dayItem.day}</p>
+      <p className={type !== "current" ? css.notInCurrentMonth : ""}>
+        {dayItem.day}
+      </p>
     </button>
   );
 }

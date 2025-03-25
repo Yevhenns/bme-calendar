@@ -17,10 +17,6 @@
   }
 }
 
-.dayToday {
-  background-color: #dcdcdc;
-}
-
-.weekend {
-  background-color: #90ee90;
+.notInCurrentMonth {
+  color: #d0d5d8;
 }
