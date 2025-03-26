@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import { Calendar } from "./components/Calendar/Calendar";
+import "./App.css";
 
 function App() {
   const [day, setDay] = useState<string>();

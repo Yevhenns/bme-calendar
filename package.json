@@ -1,12 +1,13 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "main": "dist/bme-calendar.umd.js",
   "module": "dist/bme-calendar.es.js",
   "style": "dist/styles.css",
+  "types": "dist/types.d.ts",
   "repository": "https://github.com/Yevhenns/bme-calendar.git",
   "homepage": "https://bme-calendar.vercel.app/",
   "keywords": [
