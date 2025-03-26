@@ -1,7 +1,40 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "target": "ES2022",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "emitDeclarationOnly": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
   ]
 }
