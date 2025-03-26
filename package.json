@@ -9,6 +9,14 @@
   "style": "dist/styles.css",
   "repository": "https://github.com/Yevhenns/bme-calendar.git",
   "homepage": "https://bme-calendar.vercel.app/",
+  "keywords": [
+    "react",
+    "calendar",
+    "react-calendar",
+    "date-picker",
+    "range-selector",
+    "react-date-picker"
+  ],
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
