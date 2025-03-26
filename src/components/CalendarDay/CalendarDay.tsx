@@ -1,14 +1,14 @@
 import dayjs from "dayjs";
-
 import weekOfYear from "dayjs/plugin/weekOfYear";
-import css from "./CalendarDay.module.css";
 import clsx from "clsx";
+import css from "./CalendarDay.module.css";
+import { Day } from "../../types";
 
 dayjs.extend(weekOfYear);
 
 interface DayWrapperProps {
-  dayItem: CalendarDay;
-  setUpSelectedDay: (dayItem: CalendarDay) => void;
+  dayItem: Day;
+  setUpSelectedDay: (dayItem: Day) => void;
   selectedDay: string | undefined;
   secondDay: string | undefined;
   range: string[] | undefined;

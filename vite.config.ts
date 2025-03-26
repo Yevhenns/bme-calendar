@@ -1,19 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import { resolve } from "node:path";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"), // вказуємо вхідний файл для бібліотеки
-      name: "BmeCalendar",
-      fileName: (format) => `bme-calendar.${format}.js`, // форматуємо назву файлу
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "bme-calendar",
+      fileName: "bme-calendar",
     },
     rollupOptions: {
-      // Забезпечуємо експорт у форматах, сумісних з ES і CommonJS
-      external: ["react", "react-dom"], // не включаємо react в бандл
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",

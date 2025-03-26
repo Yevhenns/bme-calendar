@@ -1,11 +1,12 @@
+import { Day, Month } from "../../types";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
 import css from "./CalendarBody.module.css";
 
 interface CalendarBodyBody {
-  finalDaysArray: CalendarMonth | undefined;
+  finalDaysArray: Month | undefined;
   selectedDay: string | undefined;
   secondDay: string | undefined;
-  setUpSelectedDay: (dayItem: CalendarDay) => void;
+  setUpSelectedDay: (dayItem: Day) => void;
   range: string[] | undefined;
 }
 

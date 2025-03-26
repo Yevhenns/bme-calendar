@@ -4,10 +4,18 @@
   "version": "1.0.5",
   "author": "Yevhen Ziuskin",
   "type": "module",
-  "main": "dist/bme-calendar.umd.js",
-  "module": "dist/bme-calendar.es.js",
-  "style": "dist/styles.css",
-  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/bme-calendar.umd.cjs",
+  "module": "./dist/bme-calendar.js",
+  "exports": {
+    ".": {
+      "import": "./dist/bme-calendar.js",
+      "require": "./dist/bme-calendar.umd.cjs"
+    },
+    "./style.css": "./dist/bme-calendar.css"
+  },
   "repository": "https://github.com/Yevhenns/bme-calendar.git",
   "homepage": "https://bme-calendar.vercel.app/",
   "keywords": [
@@ -37,6 +45,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.14",

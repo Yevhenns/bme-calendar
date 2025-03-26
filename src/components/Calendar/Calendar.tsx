@@ -3,9 +3,11 @@ import { useCalendar } from "../../hooks/useCalendar";
 import { CalendarNavigation } from "../CalendarNavigation/CalendarNavigation";
 import { CalendarHead } from "../CalendarHead/CalendarHead";
 import { CalendarBody } from "../CalendarBody/CalendarBody";
+
 import minMax from "dayjs/plugin/minMax";
 import dayjs from "dayjs";
 import css from "./Calendar.module.css";
+import { Day } from "../../types";
 
 dayjs.extend(minMax);
 
@@ -35,7 +37,7 @@ export function Calendar({
   const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
     useCalendar();
 
-  const setUpSelectedDay = (dayItem: CalendarDay) => {
+  const setUpSelectedDay = (dayItem: Day) => {
     if (type === "calendar" && setDay) {
       setSelectedDay(dayItem.id);
       setDay(dayItem.id);

@@ -14,19 +14,19 @@ npm i bme-calendar
 
 Import styles
 
-```bash
-import 'bme-calendar/dist/styles.css';
+```tsx
+import "bme-calendar/dist/styles.css";
 ```
 
 Calendar
 
-```
+```tsx
 import { useState } from "react";
 import { Calendar } from "./components/Calendar/Calendar";
-import 'bme-calendar/dist/styles.css';
+import "bme-calendar/dist/styles.css";
 
 function App() {
-const [day, setDay] = useState<string>();
+  const [day, setDay] = useState<string>();
 
   return (
     <>
@@ -38,19 +38,17 @@ const [day, setDay] = useState<string>();
 }
 
 export default App;
-
 ```
 
 Range calendar
 
-```
-
+```tsx
 import { useState } from "react";
 import { Calendar } from "./components/Calendar/Calendar";
-import 'bme-calendar/dist/styles.css';
+import "bme-calendar/dist/styles.css";
 
 function App() {
-const [range, setRange] = useState<string[]>();
+  const [range, setRange] = useState<string[]>();
 
   return (
     <>
@@ -60,7 +58,7 @@ const [range, setRange] = useState<string[]>();
         <p>Список дат:</p>
         <ul>
           {range?.map((item) => {
-          return <li key={item}>{item}</li>;
+            return <li key={item}>{item}</li>;
           })}
         </ul>
       </div>
@@ -69,5 +67,4 @@ const [range, setRange] = useState<string[]>();
 }
 
 export default App;
-
 ```

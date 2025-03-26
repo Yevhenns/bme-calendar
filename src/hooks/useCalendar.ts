@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import "dayjs/locale/uk";
+import { Month } from "../types";
 
 dayjs.locale("uk");
 
 export function useCalendar() {
-  const [finalDaysArray, setFinalDaysArray] = useState<CalendarMonth>();
+  const [finalDaysArray, setFinalDaysArray] = useState<Month>();
   const [dateToday, setDateToday] = useState(new Date());
 
   const year = dateToday.getFullYear();
@@ -107,7 +108,7 @@ export function useCalendar() {
       }
     }
 
-    setFinalDaysArray(finalDaysArray as CalendarMonth);
+    setFinalDaysArray(finalDaysArray as Month);
   }, [
     currentMonthDaysCount,
     currentMonthFirstDayIndex,
