@@ -1,6 +1,6 @@
 {
   "name": "bme-calendar",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "author": "Yevhen Ziuskin",
   "type": "module",
