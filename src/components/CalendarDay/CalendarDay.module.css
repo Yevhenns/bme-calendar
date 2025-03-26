@@ -16,6 +16,10 @@
     background-color: #e2deff;
   }
 
+  &.isInRange {
+    background-color: #e2deff;
+  }
+
   &.dayToday {
     background-color: #9b8ff3;
     color: #f8fbff;

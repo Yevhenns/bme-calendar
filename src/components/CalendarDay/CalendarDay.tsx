@@ -11,6 +11,7 @@ interface DayWrapperProps {
   setUpSelectedDay: (dayItem: CalendarDay) => void;
   selectedDay: string | undefined;
   secondDay: string | undefined;
+  range: string[] | undefined;
 }
 
 export function CalendarDay({
@@ -18,6 +19,7 @@ export function CalendarDay({
   setUpSelectedDay,
   selectedDay,
   secondDay,
+  range,
 }: DayWrapperProps) {
   const { id, type } = dayItem;
 
@@ -27,13 +29,16 @@ export function CalendarDay({
     setUpSelectedDay(dayItem);
   };
 
+  const isInRange = range?.some((item) => item === id);
+
   return (
     <button
       onClick={onClick}
       className={clsx(
         css.container,
         dayToday === id ? css.dayToday : "",
-        selectedDay === id || secondDay === id ? css.selectedDay : ""
+        selectedDay === id || secondDay === id ? css.selectedDay : "",
+        isInRange ? css.isInRange : ""
       )}
     >
       <p className={type !== "current" ? css.notInCurrentMonth : ""}>

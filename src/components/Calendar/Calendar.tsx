@@ -14,17 +14,20 @@ type CalendarProps =
       type?: "calendar";
       setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
       setRange?: never;
+      range?: never;
     }
   | {
       type: "range";
       setDay?: never;
       setRange: React.Dispatch<React.SetStateAction<string[] | undefined>>;
+      range: string[] | undefined;
     };
 
 export function Calendar({
   type = "calendar",
   setDay,
   setRange,
+  range,
 }: CalendarProps) {
   const [selectedDay, setSelectedDay] = useState<string>();
   const [secondDay, setSecondDay] = useState<string>();
@@ -92,6 +95,7 @@ export function Calendar({
         selectedDay={selectedDay}
         secondDay={secondDay}
         setUpSelectedDay={setUpSelectedDay}
+        range={range}
       />
     </div>
   );

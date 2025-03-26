@@ -12,7 +12,7 @@ function App() {
       <Calendar setDay={setDay} />
       <p>Дата: {day}</p>
       <h2>Діапазон дат</h2>
-      <Calendar type="range" setRange={setRange} />
+      <Calendar type="range" setRange={setRange} range={range} />
       <div>
         <p>Список дат:</p>
         <ul>

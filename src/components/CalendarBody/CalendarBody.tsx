@@ -6,6 +6,7 @@ interface CalendarBodyBody {
   selectedDay: string | undefined;
   secondDay: string | undefined;
   setUpSelectedDay: (dayItem: CalendarDay) => void;
+  range: string[] | undefined;
 }
 
 export function CalendarBody({
@@ -13,6 +14,7 @@ export function CalendarBody({
   selectedDay,
   secondDay,
   setUpSelectedDay,
+  range,
 }: CalendarBodyBody) {
   return (
     <div className={css.monthWrapper}>
@@ -28,6 +30,7 @@ export function CalendarBody({
                     setUpSelectedDay={setUpSelectedDay}
                     selectedDay={selectedDay}
                     secondDay={secondDay}
+                    range={range}
                   />
                 );
               })}
