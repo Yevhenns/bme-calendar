@@ -28,7 +28,6 @@ export function Calendar({
 }: CalendarProps) {
   const [selectedDay, setSelectedDay] = useState<string>();
   const [secondDay, setSecondDay] = useState<string>();
-  const [rangeState, setRangeState] = useState<string[]>();
 
   const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
     useCalendar();
@@ -62,30 +61,23 @@ export function Calendar({
   const difference = secondDate.diff(firstDate, "day");
 
   useEffect(() => {
-    const makeRangeArray = () => {
-      let startDay = firstDate;
-      const rangeArray = [firstDateString];
-      for (let i = 0; i < difference; i++) {
-        const day = startDay.add(1, "day");
-        rangeArray.push(day.format("YYYY-MM-DD"));
-        startDay = day;
-      }
-      setRangeState(rangeArray);
-    };
-    makeRangeArray();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [difference]);
-
-  useEffect(() => {
     if (type === "range" && setRange) {
       if (selectedDay && secondDay) {
-        setRange(rangeState);
+        let startDay = firstDate;
+        const rangeArray = [firstDateString];
+        for (let i = 0; i < difference; i++) {
+          const day = startDay.add(1, "day");
+          rangeArray.push(day.format("YYYY-MM-DD"));
+          startDay = day;
+        }
+        setRange(rangeArray);
       }
       if (!secondDay) {
         setRange(undefined);
       }
     }
-  }, [rangeState, secondDay, selectedDay, setRange, type]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [secondDay, selectedDay, setRange, type, difference]);
 
   return (
     <div className={css.calendar}>
