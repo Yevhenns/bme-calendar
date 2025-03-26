@@ -8,11 +8,13 @@ function App() {
 
   return (
     <>
+      <h2>Календар</h2>
       <Calendar setDay={setDay} />
       <p>Дата: {day}</p>
+      <h2>Діапазон дат</h2>
       <Calendar type="range" setRange={setRange} />
       <div>
-        <p>Список дат</p>
+        <p>Список дат:</p>
         <ul>
           {range?.map((item) => {
             return <li key={item}>{item}</li>;
