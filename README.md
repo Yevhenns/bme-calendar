@@ -2,7 +2,7 @@
 
 Developed for [Book My Event](https://evently-book.vercel.app/).
 
-[Examples](https://bme-calendar.vercel.app/)
+[Examples](https://bme-calendar-examples.vercel.app/)
 
 ## Instalation
 
@@ -18,7 +18,7 @@ Import styles
 import "bme-calendar/style.css";
 ```
 
-Calendar
+Date Picker
 
 ```tsx
 import { useState } from "react";
@@ -40,7 +40,7 @@ function App() {
 export default App;
 ```
 
-Range calendar
+Date Range Picker
 
 ```tsx
 import { useState } from "react";
