@@ -1,4 +1,5 @@
 .calendar {
   background-color: #f8fbff;
   width: 100%;
+  overflow: hidden;
 }

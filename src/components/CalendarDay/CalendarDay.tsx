@@ -29,21 +29,38 @@ export function CalendarDay({
     setUpSelectedDay(dayItem);
   };
 
-  const isInRange = range?.some((item) => item === id);
+  const isInRange = range?.some(
+    (item, index) => item === id && index !== 0 && index !== range.length - 1
+  );
+
+  const isFirst = range?.some((item, index) => item === id && index === 0);
+
+  const isLast = range?.some(
+    (item, index) => item === id && index === range.length - 1
+  );
 
   return (
-    <button
-      onClick={onClick}
+    <div
       className={clsx(
-        css.container,
-        dayToday === id ? css.dayToday : "",
-        selectedDay === id || secondDay === id ? css.selectedDay : "",
-        isInRange ? css.isInRange : ""
+        css.wrapper,
+        isInRange ? css.wrapperIsInRange : "",
+        isFirst ? css.first : "",
+        isLast ? css.last : ""
       )}
     >
-      <p className={type !== "current" ? css.notInCurrentMonth : ""}>
-        {dayItem.day}
-      </p>
-    </button>
+      <button
+        onClick={onClick}
+        className={clsx(
+          css.container,
+          dayToday === id ? css.dayToday : "",
+          selectedDay === id || secondDay === id ? css.selectedDay : "",
+          isInRange ? css.isInRange : ""
+        )}
+      >
+        <p className={type !== "current" ? css.notInCurrentMonth : ""}>
+          {dayItem.day}
+        </p>
+      </button>
+    </div>
   );
 }
