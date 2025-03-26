@@ -5,10 +5,12 @@ import { CalendarBody } from "../CalendarBody/CalendarBody";
 import css from "./Calendar.module.css";
 import { useState } from "react";
 
-type CalendarProps = {
-  type?: "calendar" | "range";
-  setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
-};
+type CalendarProps =
+  | {
+      type?: "calendar";
+      setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
+    }
+  | { type: "range"; setDay?: never };
 
 export function Calendar({ type = "calendar", setDay }: CalendarProps) {
   const [selectedDay, setSelectedDay] = useState<string | undefined>();
@@ -16,7 +18,7 @@ export function Calendar({ type = "calendar", setDay }: CalendarProps) {
   // const [range, setRange] = useState<string[] | undefined>();
 
   const setUpSelectedDay = (dayItem: CalendarDay) => {
-    if (type === "calendar") {
+    if (type === "calendar" && setDay) {
       setSelectedDay(dayItem.id);
       setDay(dayItem.id);
     }

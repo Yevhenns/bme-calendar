@@ -9,6 +9,8 @@ function App() {
     <>
       <Calendar setDay={setSelectedDay} />
       <p>Дата: {selectedDay}</p>
+      <Calendar type="range" />
+      <p>Список дат:</p>
     </>
   );
 }
