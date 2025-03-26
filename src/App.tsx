@@ -3,11 +3,11 @@ import "./App.css";
 import { Calendar } from "./components/Calendar/Calendar";
 
 function App() {
-  const [selectedDay, setSelectedDay] = useState<string | undefined>(undefined);
+  const [selectedDay, setSelectedDay] = useState<string | undefined>();
 
   return (
     <>
-      <Calendar setSelectedDay={setSelectedDay} />
+      <Calendar setDay={setSelectedDay} />
       <p>Дата: {selectedDay}</p>
     </>
   );

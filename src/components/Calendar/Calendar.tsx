@@ -7,21 +7,19 @@ import { useState } from "react";
 
 type CalendarProps = {
   type?: "calendar" | "range";
-  setSelectedDay: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
-export function Calendar({
-  type = "calendar",
-  setSelectedDay: setDay,
-}: CalendarProps) {
-  const [selectedDay, setSelectedDay] = useState<string | undefined>(undefined);
-  // const [secondDay, setSecondDay] = useState<string | undefined>(undefined);
-  // const [range, setRange] = useState<string[] | undefined>(undefined);
-  console.log(type);
+export function Calendar({ type = "calendar", setDay }: CalendarProps) {
+  const [selectedDay, setSelectedDay] = useState<string | undefined>();
+  // const [secondDay, setSecondDay] = useState<string | undefined>();
+  // const [range, setRange] = useState<string[] | undefined>();
 
   const setUpSelectedDay = (dayItem: CalendarDay) => {
-    setSelectedDay(dayItem.id);
-    setDay(dayItem.id);
+    if (type === "calendar") {
+      setSelectedDay(dayItem.id);
+      setDay(dayItem.id);
+    }
   };
 
   const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
