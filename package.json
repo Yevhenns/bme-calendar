@@ -1,10 +1,11 @@
 {
   "name": "bme-calendar",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Yevhen Ziuskin",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

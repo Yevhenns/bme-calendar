@@ -1,19 +1,17 @@
-import { useState } from "react";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
 import css from "./CalendarBody.module.css";
 
 interface CalendarBodyBody {
   finalDaysArray: CalendarMonth | undefined;
+  selectedDay: string | undefined;
+  setUpSelectedDay: (dayItem: CalendarDay) => void;
 }
 
-export function CalendarBody({ finalDaysArray }: CalendarBodyBody) {
-  const [selectedDay, setSelectedDay] = useState("");
-
-  const setUpSelectedDay = (dayItem: CalendarDay) => {
-    setSelectedDay(dayItem.id);
-    console.log(dayItem);
-  };
-
+export function CalendarBody({
+  finalDaysArray,
+  selectedDay,
+  setUpSelectedDay,
+}: CalendarBodyBody) {
   return (
     <div className={css.monthWrapper}>
       {finalDaysArray &&

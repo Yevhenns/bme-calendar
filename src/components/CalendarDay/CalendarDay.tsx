@@ -9,7 +9,7 @@ dayjs.extend(weekOfYear);
 interface DayWrapperProps {
   dayItem: CalendarDay;
   setUpSelectedDay: (dayItem: CalendarDay) => void;
-  selectedDay: string;
+  selectedDay: string | undefined;
 }
 
 export function CalendarDay({
