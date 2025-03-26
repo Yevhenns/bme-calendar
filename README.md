@@ -15,7 +15,7 @@ npm i bme-calendar
 Import styles
 
 ```tsx
-import "bme-calendar/dist/styles.css";
+import "bme-calendar/style.css";
 ```
 
 Calendar
@@ -23,7 +23,7 @@ Calendar
 ```tsx
 import { useState } from "react";
 import { Calendar } from "./components/Calendar/Calendar";
-import "bme-calendar/dist/styles.css";
+import "bme-calendar/style.css";
 
 function App() {
   const [day, setDay] = useState<string>();
@@ -45,7 +45,7 @@ Range calendar
 ```tsx
 import { useState } from "react";
 import { Calendar } from "./components/Calendar/Calendar";
-import "bme-calendar/dist/styles.css";
+import "bme-calendar/style.css";
 
 function App() {
   const [range, setRange] = useState<string[]>();

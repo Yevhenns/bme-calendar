@@ -1,7 +1,7 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.0.10",
+  "version": "1.0.11",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "files": [
@@ -9,11 +9,12 @@
   ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/types/types.d.ts",
+  "types": "./dist/src/types/types.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/src/types/types.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
