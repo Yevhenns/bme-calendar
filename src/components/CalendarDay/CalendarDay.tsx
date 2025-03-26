@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import clsx from "clsx";
 import css from "./CalendarDay.module.css";
-import { Day } from "../../types";
+import { Day } from "../../types/types";
 
 dayjs.extend(weekOfYear);
 

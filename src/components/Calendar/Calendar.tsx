@@ -3,11 +3,10 @@ import { useCalendar } from "../../hooks/useCalendar";
 import { CalendarNavigation } from "../CalendarNavigation/CalendarNavigation";
 import { CalendarHead } from "../CalendarHead/CalendarHead";
 import { CalendarBody } from "../CalendarBody/CalendarBody";
-
 import minMax from "dayjs/plugin/minMax";
 import dayjs from "dayjs";
+import { Day } from "../../types/types";
 import css from "./Calendar.module.css";
-import { Day } from "../../types";
 
 dayjs.extend(minMax);
 

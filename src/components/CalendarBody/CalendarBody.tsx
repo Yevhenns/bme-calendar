@@ -1,4 +1,4 @@
-import { Day, Month } from "../../types";
+import { Day, Month } from "../../types/types";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
 import css from "./CalendarBody.module.css";
 

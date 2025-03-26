@@ -14,7 +14,8 @@
       "import": "./dist/bme-calendar.js",
       "require": "./dist/bme-calendar.umd.cjs"
     },
-    "./style.css": "./dist/bme-calendar.css"
+    "./style.css": "./dist/bme-calendar.css",
+    "./types": "./dist/types/index.d.ts"
   },
   "repository": "https://github.com/Yevhenns/bme-calendar.git",
   "homepage": "https://bme-calendar.vercel.app/",
