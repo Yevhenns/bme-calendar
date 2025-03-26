@@ -1,22 +1,21 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/bme-calendar.umd.cjs",
-  "module": "./dist/bme-calendar.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/bme-calendar.js",
-      "require": "./dist/bme-calendar.umd.cjs",
-      "types": "./dist/src/index.d.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     },
-    "./style.css": "./dist/bme-calendar.css"
+    "./style.css": "./dist/style.css"
   },
   "repository": "https://github.com/Yevhenns/bme-calendar.git",
   "homepage": "https://bme-calendar.vercel.app/",
