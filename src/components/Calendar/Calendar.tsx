@@ -3,7 +3,11 @@ import { useCalendar } from "../../hooks/useCalendar";
 import { CalendarNavigation } from "../CalendarNavigation/CalendarNavigation";
 import { CalendarHead } from "../CalendarHead/CalendarHead";
 import { CalendarBody } from "../CalendarBody/CalendarBody";
+import minMax from "dayjs/plugin/minMax";
+import dayjs from "dayjs";
 import css from "./Calendar.module.css";
+
+dayjs.extend(minMax);
 
 type CalendarProps =
   | {
@@ -22,8 +26,9 @@ export function Calendar({
   setDay,
   setRange,
 }: CalendarProps) {
-  const [selectedDay, setSelectedDay] = useState<string | undefined>();
-  const [secondDay, setSecondDay] = useState<string | undefined>();
+  const [selectedDay, setSelectedDay] = useState<string>();
+  const [secondDay, setSecondDay] = useState<string>();
+  const [rangeState, setRangeState] = useState<string[]>();
 
   const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
     useCalendar();
@@ -49,16 +54,38 @@ export function Calendar({
     }
   };
 
+  const firstDate = dayjs.min(dayjs(selectedDay), dayjs(secondDay));
+  const firstDateString = firstDate.format("YYYY-MM-DD");
+
+  const secondDate = dayjs.max(dayjs(selectedDay), dayjs(secondDay));
+
+  const difference = secondDate.diff(firstDate, "day");
+
+  useEffect(() => {
+    const makeRangeArray = () => {
+      let startDay = firstDate;
+      const rangeArray = [firstDateString];
+      for (let i = 0; i < difference; i++) {
+        const day = startDay.add(1, "day");
+        rangeArray.push(day.format("YYYY-MM-DD"));
+        startDay = day;
+      }
+      setRangeState(rangeArray);
+    };
+    makeRangeArray();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [difference]);
+
   useEffect(() => {
     if (type === "range" && setRange) {
       if (selectedDay && secondDay) {
-        setRange([selectedDay, secondDay]);
+        setRange(rangeState);
       }
       if (!secondDay) {
         setRange(undefined);
       }
     }
-  }, [secondDay, selectedDay, setRange, type]);
+  }, [rangeState, secondDay, selectedDay, setRange, type]);
 
   return (
     <div className={css.calendar}>

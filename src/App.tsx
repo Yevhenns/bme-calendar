@@ -3,8 +3,8 @@ import "./App.css";
 import { Calendar } from "./components/Calendar/Calendar";
 
 function App() {
-  const [day, setDay] = useState<string | undefined>();
-  const [range, setRange] = useState<string[] | undefined>();
+  const [day, setDay] = useState<string>();
+  const [range, setRange] = useState<string[]>();
 
   return (
     <>
