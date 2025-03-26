@@ -1,11 +1,12 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "main": "dist/bme-calendar.umd.js",
   "module": "dist/bme-calendar.es.js",
+  "style": "dist/styles.css",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
