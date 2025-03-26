@@ -25,6 +25,9 @@ export function Calendar({
   const [selectedDay, setSelectedDay] = useState<string | undefined>();
   const [secondDay, setSecondDay] = useState<string | undefined>();
 
+  const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
+    useCalendar();
+
   const setUpSelectedDay = (dayItem: CalendarDay) => {
     if (type === "calendar" && setDay) {
       setSelectedDay(dayItem.id);
@@ -45,9 +48,6 @@ export function Calendar({
       }
     }
   };
-
-  const { finalDaysArray, currentMonthName, incrementMonth, decrementMonth } =
-    useCalendar();
 
   useEffect(() => {
     if (type === "range" && setRange) {
