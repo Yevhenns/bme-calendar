@@ -4,12 +4,14 @@ import css from "./CalendarBody.module.css";
 interface CalendarBodyBody {
   finalDaysArray: CalendarMonth | undefined;
   selectedDay: string | undefined;
+  secondDay: string | undefined;
   setUpSelectedDay: (dayItem: CalendarDay) => void;
 }
 
 export function CalendarBody({
   finalDaysArray,
   selectedDay,
+  secondDay,
   setUpSelectedDay,
 }: CalendarBodyBody) {
   return (
@@ -25,6 +27,7 @@ export function CalendarBody({
                     dayItem={dayItem}
                     setUpSelectedDay={setUpSelectedDay}
                     selectedDay={selectedDay}
+                    secondDay={secondDay}
                   />
                 );
               })}

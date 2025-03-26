@@ -3,14 +3,22 @@ import "./App.css";
 import { Calendar } from "./components/Calendar/Calendar";
 
 function App() {
-  const [selectedDay, setSelectedDay] = useState<string | undefined>();
+  const [day, setDay] = useState<string | undefined>();
+  const [range, setRange] = useState<string[] | undefined>();
 
   return (
     <>
-      <Calendar setDay={setSelectedDay} />
-      <p>Дата: {selectedDay}</p>
-      <Calendar type="range" />
-      <p>Список дат:</p>
+      <Calendar setDay={setDay} />
+      <p>Дата: {day}</p>
+      <Calendar type="range" setRange={setRange} />
+      <div>
+        <p>Список дат</p>
+        <ul>
+          {range?.map((item) => {
+            return <li key={item}>{item}</li>;
+          })}
+        </ul>
+      </div>
     </>
   );
 }

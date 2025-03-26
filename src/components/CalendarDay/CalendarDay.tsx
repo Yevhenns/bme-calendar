@@ -10,12 +10,14 @@ interface DayWrapperProps {
   dayItem: CalendarDay;
   setUpSelectedDay: (dayItem: CalendarDay) => void;
   selectedDay: string | undefined;
+  secondDay: string | undefined;
 }
 
 export function CalendarDay({
   dayItem,
   setUpSelectedDay,
   selectedDay,
+  secondDay,
 }: DayWrapperProps) {
   const { id, type } = dayItem;
 
@@ -31,7 +33,7 @@ export function CalendarDay({
       className={clsx(
         css.container,
         dayToday === id ? css.dayToday : "",
-        selectedDay === id ? css.selectedDay : ""
+        selectedDay === id || secondDay === id ? css.selectedDay : ""
       )}
     >
       <p className={type !== "current" ? css.notInCurrentMonth : ""}>
