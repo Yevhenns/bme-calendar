@@ -44,8 +44,8 @@ export function CalendarDay({
       className={clsx(
         css.wrapper,
         isInRange ? css.wrapperIsInRange : "",
-        isFirst ? css.first : "",
-        isLast ? css.last : ""
+        isFirst && range?.length !== 1 ? css.first : "",
+        isLast && range?.length !== 1 ? css.last : ""
       )}
     >
       <button
