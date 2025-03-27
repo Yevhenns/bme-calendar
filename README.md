@@ -41,7 +41,7 @@ export default App;
 ```
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/44893a79-f598-46d9-92c5-4828bf430ee6" alt="image" width="400">
+  <img src="https://github.com/user-attachments/assets/6ac62eb8-ed87-43ea-943a-606b50dd64d9" alt="image" width="400">
 </p>
 
 Date Range Picker 24x24px
@@ -74,8 +74,10 @@ export default App;
 ```
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/203145e8-8a1b-4faf-ba5e-4d4611d75058" alt="image" width="400">
+  <img src="https://github.com/user-attachments/assets/b946cf10-677e-49f6-a568-71d45e8f5fd2" alt="image" width="400">
 </p>
+
+The current day is outlined.
 
 The default type is Date Picker (type="calendar").
 
