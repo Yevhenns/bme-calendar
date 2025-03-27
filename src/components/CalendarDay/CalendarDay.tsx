@@ -55,6 +55,7 @@ export function CalendarDay({
       )}
     >
       <button
+        tabIndex={isGap ? -1 : 0}
         style={{
           width: isGap ? "100% " : daySizes.width,
           height: daySizes.height,
