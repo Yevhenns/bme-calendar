@@ -14,11 +14,19 @@ export function CalendarNavigation({
 }: CalendarNavigationProps) {
   return (
     <div className={css.navigation}>
-      <button className={css.button} onClick={decrementMonth}>
+      <button
+        className={css.button}
+        onClick={decrementMonth}
+        aria-label="previous month"
+      >
         <BiChevronLeft size={32} />
       </button>
       <p className={css.month}>{currentMonthName}</p>
-      <button className={css.button} onClick={incrementMonth}>
+      <button
+        className={css.button}
+        onClick={incrementMonth}
+        aria-label="next month"
+      >
         <BiChevronRight size={32} />
       </button>
     </div>
