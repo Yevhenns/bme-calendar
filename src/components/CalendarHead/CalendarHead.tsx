@@ -8,7 +8,7 @@ interface CalendarHeadProps {
 }
 export function CalendarHead({ daySize }: CalendarHeadProps) {
   return (
-    <div className={css.headWrapper}>
+    <div className={css.headWrapper} style={{ height: daySize.height }}>
       {dayNames.map((item, index) => {
         return (
           <p className={css.text} key={index} style={{ width: daySize.width }}>
