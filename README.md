@@ -18,7 +18,7 @@ Import styles
 import "bme-calendar/style.css";
 ```
 
-Date Picker
+Date Picker 24x24px
 
 ```tsx
 import { useState } from "react";
@@ -40,7 +40,7 @@ function App() {
 export default App;
 ```
 
-Date Range Picker
+Date Range Picker 24x24px
 
 ```tsx
 import { useState } from "react";
@@ -67,4 +67,11 @@ function App() {
 }
 
 export default App;
+```
+
+Default size is 24x24px
+For receiving 40x32px add props to Calendar
+
+```tsx
+<Calendar setDay={setDay} daySize={{ width: 40, height: 32 }} />
 ```

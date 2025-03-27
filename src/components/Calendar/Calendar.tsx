@@ -105,7 +105,7 @@ export function Calendar({
         incrementMonth={incrementMonth}
         decrementMonth={decrementMonth}
       />
-      <CalendarHead />
+      <CalendarHead daySize={daySize} />
       <CalendarBody
         finalDaysArray={finalDaysArray}
         selectedDay={selectedDay}
