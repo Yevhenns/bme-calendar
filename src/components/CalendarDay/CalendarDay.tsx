@@ -54,24 +54,24 @@ export function CalendarDay({
         isLast ? css.lastDay : ""
       )}
     >
-      <button
-        tabIndex={isGap ? -1 : 0}
-        style={{
-          width: isGap ? "100% " : daySizes.width,
-          height: daySizes.height,
-        }}
-        onClick={onClick}
-        className={clsx(
-          css.container,
-          dayToday === id ? css.dayToday : "",
-          selectedDay === id || secondDay === id ? css.selectedDay : "",
-          isGap ? css.isGapBtn : ""
-        )}
-      >
-        <p className={type !== "current" ? css.notInCurrentMonth : ""}>
-          {dayItem.day}
-        </p>
-      </button>
+      {!isGap && (
+        <button
+          style={{
+            width: daySizes.width,
+            height: daySizes.height,
+          }}
+          onClick={onClick}
+          className={clsx(
+            css.container,
+            dayToday === id ? css.dayToday : "",
+            selectedDay === id || secondDay === id ? css.selectedDay : ""
+          )}
+        >
+          <p className={type !== "current" ? css.notInCurrentMonth : ""}>
+            {dayItem.day}
+          </p>
+        </button>
+      )}
     </div>
   );
 }

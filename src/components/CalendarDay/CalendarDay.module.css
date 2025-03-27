@@ -32,15 +32,6 @@
     font-size: 12px;
     padding: 0;
 
-    &.isGapBtn {
-      background-color: transparent;
-      cursor: default;
-
-      &:hover {
-        background-color: transparent;
-      }
-    }
-
     &:hover {
       background-color: #e2deff;
     }
