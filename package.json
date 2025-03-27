@@ -1,7 +1,7 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "license": "MIT",

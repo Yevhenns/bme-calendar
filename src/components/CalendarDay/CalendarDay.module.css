@@ -37,8 +37,7 @@
     }
 
     &.dayToday {
-      background-color: #9b8ff3;
-      color: #f8fbff;
+      border: 2px solid #9b8ff3;
     }
 
     &.selectedDay {
