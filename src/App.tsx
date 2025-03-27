@@ -11,7 +11,7 @@ function App() {
       <h2>Календар</h2>
       <Calendar setDay={setDay} />
       <p>Дата: {day}</p>
-      <Calendar setDay={setDay} daySize={{ width: 40, height: 32 }} />
+      <Calendar setDay={setDay} daySize="mobile" />
       <p>Дата: {day}</p>
       <h2>Діапазон дат</h2>
       <Calendar type="range" setRange={setRange} range={range} />

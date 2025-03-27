@@ -3,47 +3,22 @@ import { useCalendar } from "../../hooks/useCalendar";
 import { CalendarNavigation } from "../CalendarNavigation/CalendarNavigation";
 import { CalendarHead } from "../CalendarHead/CalendarHead";
 import { CalendarBody } from "../CalendarBody/CalendarBody";
-import minMax from "dayjs/plugin/minMax";
+import { DatePicker, DateRangePicker, Day } from "../../types/types";
+import { getDaySize } from "../../helpers/getDaySize";
 import dayjs from "dayjs";
-import { Day } from "../../types/types";
+import minMax from "dayjs/plugin/minMax";
 import css from "./Calendar.module.css";
 
 dayjs.extend(minMax);
 
-interface Desktop {
-  width: 24;
-  height: 24;
-}
-
-interface Mobile {
-  width: 40;
-  height: 32;
-}
-
-export type DaySize = Desktop | Mobile;
-
-type CalendarProps =
-  | {
-      type?: "calendar";
-      setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
-      setRange?: never;
-      range?: never;
-      daySize?: DaySize;
-    }
-  | {
-      type: "range";
-      setDay?: never;
-      setRange: React.Dispatch<React.SetStateAction<string[] | undefined>>;
-      range: string[] | undefined;
-      daySize?: DaySize;
-    };
+type CalendarProps = DatePicker | DateRangePicker;
 
 export function Calendar({
   type = "calendar",
   setDay,
   setRange,
   range,
-  daySize = { width: 24, height: 24 },
+  daySize = "desktop",
 }: CalendarProps) {
   const [selectedDay, setSelectedDay] = useState<string>();
   const [secondDay, setSecondDay] = useState<string>();
@@ -79,6 +54,8 @@ export function Calendar({
 
   const difference = secondDate.diff(firstDate, "day");
 
+  const daySizes = getDaySize(daySize);
+
   useEffect(() => {
     if (type === "range" && setRange) {
       if (selectedDay && secondDay) {
@@ -105,14 +82,14 @@ export function Calendar({
         incrementMonth={incrementMonth}
         decrementMonth={decrementMonth}
       />
-      <CalendarHead daySize={daySize} />
+      <CalendarHead daySizes={daySizes} />
       <CalendarBody
         finalDaysArray={finalDaysArray}
         selectedDay={selectedDay}
         secondDay={secondDay}
         setUpSelectedDay={setUpSelectedDay}
         range={range}
-        daySize={daySize}
+        daySizes={daySizes}
       />
     </div>
   );

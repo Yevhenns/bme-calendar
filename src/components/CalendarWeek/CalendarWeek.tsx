@@ -1,7 +1,7 @@
 import { Day, Week } from "src/types/types";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
 import css from "./CalendarWeek.module.css";
-import { DaySize } from "../Calendar/Calendar";
+import { DaySizes } from "src/helpers/getDaySize";
 
 interface CalendarWeekProps {
   week: Week;
@@ -10,7 +10,7 @@ interface CalendarWeekProps {
   selectedDay: string | undefined;
   secondDay: string | undefined;
   range: string[] | undefined;
-  daySize: DaySize;
+  daySizes: DaySizes;
 }
 
 export function CalendarWeek({
@@ -20,7 +20,7 @@ export function CalendarWeek({
   selectedDay,
   secondDay,
   range,
-  daySize,
+  daySizes,
 }: CalendarWeekProps) {
   const extraItems = [
     { id: "1", type: "gap" },
@@ -61,7 +61,7 @@ export function CalendarWeek({
             secondDay={secondDay}
             slicedArray={slicedArray}
             range={range}
-            daySize={daySize}
+            daySizes={daySizes}
           />
         );
       })}

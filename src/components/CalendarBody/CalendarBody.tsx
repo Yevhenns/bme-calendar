@@ -1,5 +1,5 @@
+import { DaySizes } from "src/helpers/getDaySize";
 import { Day, Month } from "../../types/types";
-import { DaySize } from "../Calendar/Calendar";
 import { CalendarWeek } from "../CalendarWeek/CalendarWeek";
 import css from "./CalendarBody.module.css";
 
@@ -9,7 +9,7 @@ interface CalendarBodyBody {
   secondDay: string | undefined;
   setUpSelectedDay: (dayItem: Day) => void;
   range: string[] | undefined;
-  daySize: DaySize;
+  daySizes: DaySizes;
 }
 
 export function CalendarBody({
@@ -18,7 +18,7 @@ export function CalendarBody({
   secondDay,
   setUpSelectedDay,
   range,
-  daySize,
+  daySizes,
 }: CalendarBodyBody) {
   return (
     <div className={css.monthWrapper}>
@@ -33,7 +33,7 @@ export function CalendarBody({
               selectedDay={selectedDay}
               secondDay={secondDay}
               range={range}
-              daySize={daySize}
+              daySizes={daySizes}
             />
           );
         })}
