@@ -1,9 +1,4 @@
 .monthWrapper {
   display: flex;
   flex-direction: column;
-
-  .weekWrapper {
-    display: flex;
-    justify-content: space-between;
-  }
 }

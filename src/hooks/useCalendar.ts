@@ -122,7 +122,6 @@ export function useCalendar() {
   return {
     finalDaysArray,
     currentMonthName,
-    year,
     incrementMonth,
     decrementMonth,
   };
