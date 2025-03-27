@@ -40,7 +40,9 @@ function App() {
 export default App;
 ```
 
-![image](https://github.com/user-attachments/assets/44893a79-f598-46d9-92c5-4828bf430ee6)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/44893a79-f598-46d9-92c5-4828bf430ee6" alt="image" width="400">
+</p>
 
 Date Range Picker 24x24px
 
@@ -71,7 +73,9 @@ function App() {
 export default App;
 ```
 
-![image](https://github.com/user-attachments/assets/203145e8-8a1b-4faf-ba5e-4d4611d75058)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/203145e8-8a1b-4faf-ba5e-4d4611d75058" alt="image" width="400">
+</p>
 
 Default size is 24x24px
 
