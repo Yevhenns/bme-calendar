@@ -77,9 +77,9 @@ export default App;
   <img src="https://github.com/user-attachments/assets/203145e8-8a1b-4faf-ba5e-4d4611d75058" alt="image" width="400">
 </p>
 
-Default size is 24x24px
+The default cell size is 24x24px.
 
-For receiving 40x32px add props to Calendar
+To receive a 40x32px cell, add props to the Calendar.
 
 ```tsx
 <Calendar setDay={setDay} daySize={{ width: 40, height: 32 }} />
