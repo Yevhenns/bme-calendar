@@ -1,9 +1,10 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.0.18",
+  "version": "1.0.19",
   "author": "Yevhen Ziuskin",
   "type": "module",
+  "license": "MIT",
   "files": [
     "dist"
   ],
