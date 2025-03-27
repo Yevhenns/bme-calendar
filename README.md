@@ -40,6 +40,8 @@ function App() {
 export default App;
 ```
 
+![image](https://github.com/user-attachments/assets/44893a79-f598-46d9-92c5-4828bf430ee6)
+
 Date Range Picker 24x24px
 
 ```tsx
@@ -69,7 +71,10 @@ function App() {
 export default App;
 ```
 
+![image](https://github.com/user-attachments/assets/203145e8-8a1b-4faf-ba5e-4d4611d75058)
+
 Default size is 24x24px
+
 For receiving 40x32px add props to Calendar
 
 ```tsx
