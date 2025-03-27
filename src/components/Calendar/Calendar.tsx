@@ -10,18 +10,32 @@ import css from "./Calendar.module.css";
 
 dayjs.extend(minMax);
 
+interface Desktop {
+  width: 24;
+  height: 24;
+}
+
+interface Mobile {
+  width: 40;
+  height: 32;
+}
+
+export type DaySize = Desktop | Mobile;
+
 type CalendarProps =
   | {
       type?: "calendar";
       setDay: React.Dispatch<React.SetStateAction<string | undefined>>;
       setRange?: never;
       range?: never;
+      daySize?: DaySize;
     }
   | {
       type: "range";
       setDay?: never;
       setRange: React.Dispatch<React.SetStateAction<string[] | undefined>>;
       range: string[] | undefined;
+      daySize?: DaySize;
     };
 
 export function Calendar({
@@ -29,6 +43,7 @@ export function Calendar({
   setDay,
   setRange,
   range,
+  daySize = { width: 24, height: 24 },
 }: CalendarProps) {
   const [selectedDay, setSelectedDay] = useState<string>();
   const [secondDay, setSecondDay] = useState<string>();
@@ -97,6 +112,7 @@ export function Calendar({
         secondDay={secondDay}
         setUpSelectedDay={setUpSelectedDay}
         range={range}
+        daySize={daySize}
       />
     </div>
   );

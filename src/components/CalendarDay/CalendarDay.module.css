@@ -21,8 +21,6 @@
   }
 
   .container {
-    width: 24px;
-    height: 24px;
     background-color: transparent;
     border: none;
     border-radius: 4px;
@@ -35,7 +33,6 @@
     padding: 0;
 
     &.isGapBtn {
-      width: 100%;
       background-color: transparent;
       cursor: default;
 

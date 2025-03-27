@@ -3,6 +3,7 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import clsx from "clsx";
 import { Day } from "../../types/types";
 import css from "./CalendarDay.module.css";
+import { DaySize } from "../Calendar/Calendar";
 
 dayjs.extend(weekOfYear);
 
@@ -13,6 +14,7 @@ interface DayWrapperProps {
   secondDay: string | undefined;
   slicedArray: Day[];
   range: string[] | undefined;
+  daySize: DaySize;
 }
 
 export function CalendarDay({
@@ -22,6 +24,7 @@ export function CalendarDay({
   secondDay,
   slicedArray,
   range,
+  daySize,
 }: DayWrapperProps) {
   const { id, type } = dayItem;
 
@@ -52,6 +55,10 @@ export function CalendarDay({
       )}
     >
       <button
+        style={{
+          width: isGap ? "100% " : daySize.width,
+          height: daySize.height,
+        }}
         onClick={onClick}
         className={clsx(
           css.container,
