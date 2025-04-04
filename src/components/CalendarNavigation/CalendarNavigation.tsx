@@ -14,6 +14,7 @@ export function CalendarNavigation({
   return (
     <div className={css.navigation}>
       <button
+        type="button"
         className={css.button}
         onClick={decrementMonth}
         aria-label="previous month"
@@ -24,6 +25,7 @@ export function CalendarNavigation({
       </button>
       <p className={css.month}>{currentMonthName}</p>
       <button
+        type="button"
         className={css.button}
         onClick={incrementMonth}
         aria-label="next month"

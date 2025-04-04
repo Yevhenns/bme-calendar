@@ -22,7 +22,7 @@ Date Picker 24x24px
 
 ```tsx
 import { useState } from "react";
-import { Calendar } from "./components/Calendar/Calendar";
+import { Calendar } from "bme-calendar";
 import "bme-calendar/style.css";
 
 function App() {
@@ -48,7 +48,7 @@ Date Range Picker 24x24px
 
 ```tsx
 import { useState } from "react";
-import { Calendar } from "./components/Calendar/Calendar";
+import { Calendar } from "bme-calendar";
 import "bme-calendar/style.css";
 
 function App() {

@@ -56,6 +56,7 @@ export function CalendarDay({
     >
       {!isGap && (
         <button
+          type="button"
           aria-label="calendar day"
           style={{
             width: daySizes.width,
