@@ -1,7 +1,7 @@
 {
   "name": "bme-calendar",
   "private": false,
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": "Yevhen Ziuskin",
   "type": "module",
   "license": "MIT",
@@ -42,16 +42,13 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
-    "@types/node": "^22.13.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "copyfiles": "^2.4.1",
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.14",

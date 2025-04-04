@@ -1,4 +1,3 @@
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import css from "./CalendarNavigation.module.css";
 
 interface CalendarNavigationProps {
@@ -19,7 +18,9 @@ export function CalendarNavigation({
         onClick={decrementMonth}
         aria-label="previous month"
       >
-        <BiChevronLeft size={32} />
+        <svg className={css.rotate} width="32" height="32" fill="red">
+          <use href="/sprite.svg#chevron" />
+        </svg>
       </button>
       <p className={css.month}>{currentMonthName}</p>
       <button
@@ -27,7 +28,9 @@ export function CalendarNavigation({
         onClick={incrementMonth}
         aria-label="next month"
       >
-        <BiChevronRight size={32} />
+        <svg width="32" height="32" fill="red">
+          <use href="/sprite.svg#chevron" />
+        </svg>
       </button>
     </div>
   );
