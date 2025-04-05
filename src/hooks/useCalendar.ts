@@ -14,9 +14,9 @@ export function useCalendar() {
   const currentMonthNumber = (dateToday.getMonth() + 1)
     .toString()
     .padStart(2, "0");
-  const currentMonthName = dayjs()
-    .month(Number(currentMonthNumber) - 1)
-    .format("MMMM");
+  const currentMonthName = new Intl.DateTimeFormat("uk-UK", {
+    month: "long",
+  }).format(dateToday);
   const currentMonthDaysCount = dayjs(
     `${year}-${currentMonthNumber}`
   ).daysInMonth();
