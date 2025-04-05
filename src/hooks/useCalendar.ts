@@ -20,9 +20,9 @@ export function useCalendar() {
   const currentMonthDaysCount = dayjs(
     `${year}-${currentMonthNumber}`
   ).daysInMonth();
-  const currentMonthFirstDayIndex = dayjs(
+  const currentMonthFirstDayIndex = new Date(
     `${year}-${currentMonthNumber}-01`
-  ).day();
+  ).getDay();
 
   const prevMonthNumber = dayjs()
     .month(Number(currentMonthNumber) - 2)
