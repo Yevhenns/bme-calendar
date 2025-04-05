@@ -20,6 +20,8 @@ export function CalendarBody({
   range,
   daySizes,
 }: CalendarBodyBody) {
+  const formattedDateToday = new Date().toISOString().slice(0, 10);
+
   return (
     <div className={css.monthWrapper}>
       {finalDaysArray &&
@@ -34,6 +36,7 @@ export function CalendarBody({
               secondDay={secondDay}
               range={range}
               daySizes={daySizes}
+              formattedDateToday={formattedDateToday}
             />
           );
         })}

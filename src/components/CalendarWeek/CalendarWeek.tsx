@@ -11,6 +11,7 @@ interface CalendarWeekProps {
   secondDay: string | undefined;
   range: string[] | undefined;
   daySizes: DaySizes;
+  formattedDateToday: string;
 }
 
 export function CalendarWeek({
@@ -21,6 +22,7 @@ export function CalendarWeek({
   secondDay,
   range,
   daySizes,
+  formattedDateToday,
 }: CalendarWeekProps) {
   const extraItems = [
     { id: "1", type: "gap" },
@@ -62,6 +64,7 @@ export function CalendarWeek({
             slicedArray={slicedArray}
             range={range}
             daySizes={daySizes}
+            formattedDateToday={formattedDateToday}
           />
         );
       })}

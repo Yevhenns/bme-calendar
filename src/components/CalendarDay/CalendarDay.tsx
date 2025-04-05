@@ -1,10 +1,6 @@
 import css from "./CalendarDay.module.css";
-import dayjs from "dayjs";
-import weekOfYear from "dayjs/plugin/weekOfYear";
 import { Day } from "../../types/types";
 import { DaySizes } from "src/helpers/getDaySize";
-
-dayjs.extend(weekOfYear);
 
 interface DayWrapperProps {
   dayItem: Day;
@@ -14,6 +10,7 @@ interface DayWrapperProps {
   slicedArray: Day[];
   range: string[] | undefined;
   daySizes: DaySizes;
+  formattedDateToday: string;
 }
 
 export function CalendarDay({
@@ -24,10 +21,9 @@ export function CalendarDay({
   slicedArray,
   range,
   daySizes,
+  formattedDateToday,
 }: DayWrapperProps) {
   const { id, type } = dayItem;
-
-  const dayToday = dayjs().format("YYYY-MM-DD");
 
   const isGap = dayItem.type === "gap";
 
@@ -62,7 +58,7 @@ export function CalendarDay({
           }}
           onClick={onClick}
           className={`${css.container}
-            ${dayToday === id ? css.dayToday : ""}
+            ${formattedDateToday === id ? css.dayToday : ""}
             ${selectedDay === id || secondDay === id ? css.selectedDay : ""}`}
         >
           <p className={type !== "current" ? css.notInCurrentMonth : ""}>
