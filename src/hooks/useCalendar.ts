@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 import { Month } from "../types/types";
-import dayjs from "dayjs";
-import "dayjs/locale/uk";
-
-dayjs.locale("uk");
 
 export function useCalendar() {
   const [finalDaysArray, setFinalDaysArray] = useState<Month>();
@@ -27,12 +23,10 @@ export function useCalendar() {
   ).getDay();
 
   const prevMonthFirstDay = new Date(year, Number(currentMonthNumber) - 2);
-  const prevMonthDaysCount = dayjs(prevMonthFirstDay).daysInMonth();
   const prevMonthNumber = (prevMonthFirstDay.getMonth() + 1)
     .toString()
     .padStart(2, "0");
-
-  console.log(prevMonthNumber);
+  const prevMonthDaysCount = new Date(year, +prevMonthNumber, 0).getDate();
 
   const nextMonthNumber = (dateToday.getMonth() + 2)
     .toString()
