@@ -61,7 +61,7 @@ export function useCalendar() {
         i--
       ) {
         prevMonthDayArray.push({
-          id: dayjs(`${year}-${prevMonthNumber}-${i}`).format("YYYY-MM-DD"),
+          id: `${year}-${prevMonthNumber}-${i.toString().padStart(2, "0")}`,
           day: i,
           type: "prev",
         });
@@ -69,7 +69,7 @@ export function useCalendar() {
     } else {
       for (let i = prevMonthDaysCount; i > prevMonthDaysCount - 6; i--) {
         prevMonthDayArray.push({
-          id: dayjs(`${year}-${prevMonthNumber}-${i}`).format("YYYY-MM-DD"),
+          id: `${year}-${prevMonthNumber}-${i.toString().padStart(2, "0")})`,
           day: i,
           type: "prev",
         });
@@ -79,7 +79,7 @@ export function useCalendar() {
     const currentMonthDaysArray = [];
     for (let i = 1; i <= currentMonthDaysCount; i++) {
       currentMonthDaysArray.push({
-        id: dayjs(`${year}-${currentMonthNumber}-${i}`).format("YYYY-MM-DD"),
+        id: `${year}-${currentMonthNumber}-${i.toString().padStart(2, "0")}`,
         day: i,
         type: "current",
       });
@@ -101,7 +101,7 @@ export function useCalendar() {
     if (nextMonthDays !== 7) {
       for (let i = 1; i <= nextMonthDays; i++) {
         finalDaysArray[finalDaysArray.length - 1].push({
-          id: dayjs(`${year}-${nextMonthNumber}-${i}`).format("YYYY-MM-DD"),
+          id: `${year}-${nextMonthNumber}-${i.toString().padStart(2, "0")}`,
           day: i,
           type: "next",
         });
