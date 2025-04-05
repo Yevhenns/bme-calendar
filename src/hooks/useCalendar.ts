@@ -17,9 +17,11 @@ export function useCalendar() {
   const currentMonthName = new Intl.DateTimeFormat("uk-UK", {
     month: "long",
   }).format(dateToday);
-  const currentMonthDaysCount = dayjs(
-    `${year}-${currentMonthNumber}`
-  ).daysInMonth();
+  const currentMonthDaysCount = new Date(
+    year,
+    +currentMonthNumber,
+    0
+  ).getDate();
   const currentMonthFirstDayIndex = new Date(
     `${year}-${currentMonthNumber}-01`
   ).getDay();
