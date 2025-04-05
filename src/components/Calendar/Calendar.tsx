@@ -47,10 +47,13 @@ export function Calendar({
     }
   };
 
-  const firstDate = dayjs.min(dayjs(selectedDay), dayjs(secondDay));
-  const firstDateString = firstDate.format("YYYY-MM-DD");
+  const day1 = dayjs(selectedDay);
+  const day2 = dayjs(secondDay);
 
-  const secondDate = dayjs.max(dayjs(selectedDay), dayjs(secondDay));
+  const firstDate = dayjs.min(day1, day2);
+  const secondDate = dayjs.max(day1, day2);
+
+  const firstDateString = firstDate.format("YYYY-MM-DD");
 
   const difference = secondDate.diff(firstDate, "day");
 
