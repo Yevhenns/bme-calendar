@@ -67,7 +67,7 @@ export function useCalendar() {
     } else {
       for (let i = prevMonthDaysCount; i > prevMonthDaysCount - 6; i--) {
         prevMonthDayArray.push({
-          id: `${year}-${prevMonthNumber}-${i.toString().padStart(2, "0")})`,
+          id: `${year}-${prevMonthNumber}-${i.toString().padStart(2, "0")}`,
           day: i,
           type: "prev",
         });
