@@ -26,11 +26,13 @@ export function useCalendar() {
     `${year}-${currentMonthNumber}-01`
   ).getDay();
 
-  const prevMonthNumber = dayjs()
-    .month(Number(currentMonthNumber) - 2)
-    .format("MM");
   const prevMonthFirstDay = new Date(year, Number(currentMonthNumber) - 2);
   const prevMonthDaysCount = dayjs(prevMonthFirstDay).daysInMonth();
+  const prevMonthNumber = (prevMonthFirstDay.getMonth() + 1)
+    .toString()
+    .padStart(2, "0");
+
+  console.log(prevMonthNumber);
 
   const nextMonthNumber = (dateToday.getMonth() + 2)
     .toString()
