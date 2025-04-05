@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { Month } from "../types/types";
 import dayjs from "dayjs";
 import "dayjs/locale/uk";
-import { Month } from "../types/types";
 
 dayjs.locale("uk");
 

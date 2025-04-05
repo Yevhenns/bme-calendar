@@ -1,3 +1,4 @@
+import css from "./Calendar.module.css";
 import { useEffect, useState } from "react";
 import { useCalendar } from "../../hooks/useCalendar";
 import { CalendarNavigation } from "../CalendarNavigation/CalendarNavigation";
@@ -7,7 +8,6 @@ import { DatePicker, DateRangePicker, Day } from "../../types/types";
 import { getDaySize } from "../../helpers/getDaySize";
 import dayjs from "dayjs";
 import minMax from "dayjs/plugin/minMax";
-import css from "./Calendar.module.css";
 
 dayjs.extend(minMax);
 

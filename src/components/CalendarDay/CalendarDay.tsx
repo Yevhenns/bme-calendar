@@ -1,8 +1,7 @@
+import css from "./CalendarDay.module.css";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
-import clsx from "clsx";
 import { Day } from "../../types/types";
-import css from "./CalendarDay.module.css";
 import { DaySizes } from "src/helpers/getDaySize";
 
 dayjs.extend(weekOfYear);
@@ -46,13 +45,12 @@ export function CalendarDay({
 
   return (
     <div
-      className={clsx(
-        css.wrapper,
-        isGapInRange ? css.wrapperIsInRange : "",
-        isGap ? css.isGapWrapper : "",
-        isFirst ? css.firstDay : "",
-        isLast ? css.lastDay : ""
-      )}
+      className={`${css.wrapper}
+      ${isGapInRange ? css.wrapperIsInRange : ""}
+      ${isGap ? css.isGapWrapper : ""}
+      ${isFirst ? css.firstDay : ""}
+      ${isLast ? css.lastDay : ""}
+  `}
     >
       {!isGap && (
         <button
@@ -63,11 +61,9 @@ export function CalendarDay({
             height: daySizes.height,
           }}
           onClick={onClick}
-          className={clsx(
-            css.container,
-            dayToday === id ? css.dayToday : "",
-            selectedDay === id || secondDay === id ? css.selectedDay : ""
-          )}
+          className={`${css.container}
+            ${dayToday === id ? css.dayToday : ""}
+            ${selectedDay === id || secondDay === id ? css.selectedDay : ""}`}
         >
           <p className={type !== "current" ? css.notInCurrentMonth : ""}>
             {dayItem.day}

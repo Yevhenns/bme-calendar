@@ -1,5 +1,5 @@
-import { Chevron } from "../icons/Chevron";
 import css from "./CalendarNavigation.module.css";
+import { Chevron } from "../icons/Chevron";
 
 interface CalendarNavigationProps {
   currentMonthName: string;

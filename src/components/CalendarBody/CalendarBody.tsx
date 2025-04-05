@@ -1,7 +1,7 @@
+import css from "./CalendarBody.module.css";
 import { DaySizes } from "src/helpers/getDaySize";
 import { Day, Month } from "../../types/types";
 import { CalendarWeek } from "../CalendarWeek/CalendarWeek";
-import css from "./CalendarBody.module.css";
 
 interface CalendarBodyBody {
   finalDaysArray: Month | undefined;

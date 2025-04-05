@@ -1,6 +1,6 @@
+import css from "./CalendarWeek.module.css";
 import { Day, Week } from "src/types/types";
 import { CalendarDay } from "../CalendarDay/CalendarDay";
-import css from "./CalendarWeek.module.css";
 import { DaySizes } from "src/helpers/getDaySize";
 
 interface CalendarWeekProps {
