@@ -71,8 +71,8 @@ export function Calendar({
         }
         setRange(rangeArray);
       }
-      if (!secondDay) {
-        setRange(undefined);
+      if (selectedDay && !secondDay) {
+        setRange([selectedDay]);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
