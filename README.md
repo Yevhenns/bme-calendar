@@ -88,3 +88,13 @@ To receive a 40x32px cell, add props to the Calendar (daySize="mobile"):
 ```tsx
 <Calendar setDay={setDay} daySize="mobile" />
 ```
+
+## API
+
+| Prop       | Type                        | Default      | Description                                        |
+| ---------- | --------------------------- | ------------ | -------------------------------------------------- |
+| `type`     | `"calendar"` \| `"range"`   | `"calendar"` | Calendar mode: single date or date range           |
+| `setDay`   | `(day: string) => void`     | —            | Callback for setting the selected date             |
+| `setRange` | `(range: string[]) => void` | —            | Callback for setting the selected date range       |
+| `range`    | `string[]`                  | —            | Array of selected dates (used with `type="range"`) |
+| `daySize`  | `"desktop"` \| `"mobile"`   | `"desktop"`  | Cell size: `desktop` = 24×24px, `mobile` = 40×32px |
